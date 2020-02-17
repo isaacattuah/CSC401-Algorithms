@@ -1,3 +1,11 @@
+function addTo() {
+    let myarr = []
+    let values = document.getElementById("uarray").value.toString()
+    myarr = values.split(' ').map(Number)
+    console.log(myarr) //to confirm it has been added to the array
+    return myarr
+}
+
 //Insertion Sort Algorithm Implementation
 insertionSort = (array) => {
     for (outer = 1; outer < array.length; outer++) {
