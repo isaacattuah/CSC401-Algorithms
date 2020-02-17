@@ -1,0 +1,26 @@
+For your second assignment, you will be implementing several sorting algorithms and comparing their runtimes. Here is what you will need to do:
+1. Create a web page for assignment 2 (if you haven't already done so).
+
+2. Create a box where the user can input a length, between 00 to 500, of an array of numbers, with a submit button
+
+3. Once the submit button is pressed, create an array of random numbers (1-1000). Display display the random number, it length is smaller than 16.
+4. Implement (or find from any source coding is not that important for the assignment) the following 4 algorithms: 
+
+-Bubble sort 
+
+-Insertion sort 
+
+-Merge sort 
+
+-Quicksort
+
+5. Have a button for each of the 4 algorithms. When pressed, that algorithm sorts the array, displays the sorted array if size is less than 16, and displays the number of steps, which is the number of comparisons made by the algorithm.
+
+6. Prepare a report comparing the performances of these algorithms for input sizes  50, 100, 150, 200, 250, 300, 350, 400, 450, and 500.
+
+   a. Create an array of random numbers for each size. Use the same array as input to all four algorithms.
+   b. Run each algorithm for 20 times. Every time you have to create a new array of random numbers. Compute the average number of comparisons made by each algorithm.
+
+   c. Plot the performance: x-axis input size, y-axis average number of comparison.
+
+   d. Write a discussion comparing and contrasting performances of the algorithm. Limit your discussion to  about 250 to 300 words.
