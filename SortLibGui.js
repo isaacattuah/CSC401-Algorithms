@@ -1,4 +1,4 @@
-///The following functions input the sorted array into the console
+///The following functions input the sorted array into the TextAreaBox 
 
 
 //This function adds inputted numbers to arrays
@@ -6,7 +6,6 @@ function addTo() {
     let myarr = []
     let values = document.getElementById("uarray").value.toString() //Change input to a string
     myarr = values.split(' ').map(Number) //Split input based on spaces and map as a number
-    console.log(myarr) //to confirm it has been added to the array
     return myarr
 }
 
@@ -14,15 +13,15 @@ function addTo() {
 insertionSort = (array) => {
     for (outer = 1; outer < array.length; outer++) {
         for (inner = 0; inner < outer; inner++) {
-            console.log(array.join(' '))
+            document.getElementById("answerbox").innerHTML= array.join(' ')
             if (array[outer] < array[inner]) {
                 const [element] = array.splice(outer, 1)
                 array.splice(inner, 0, element)
             }
         }
     }
-    console.log(array.join(' '))
-    return array
+    document.getElementById("answerbox").innerHTML= array.join(' ')
+    document.getElementById("answerbox").innerHTML = array
 }
 
 //Bubble Sort Algorithm Implementation
@@ -31,10 +30,10 @@ bubbleSort = (array) => {
     do {
         swapped = false
         array.forEach((current, i) => {
-            console.log(array.join(' '))
+            document.getElementById("answerbox").innerHTML= array.join(' ')
             if (current > array[i + 1]) {
                 const temp = current
-                console.log(array.join(' '))
+                document.getElementById("answerbox").innerHTML= array.join(' ')
 
                 array[i] = array[i + 1]
                 array[i + 1] = temp
@@ -42,14 +41,14 @@ bubbleSort = (array) => {
             }
         })
     } while (swapped)
-    console.log(array.join(' '))
-    return array
+    document.getElementById("answerbox").innerHTML= array.join(' ')
+    document.getElementById("answerbox").innerHTML = array
 }
 
 //Bubble Sort Algorithm Implementation
 quickSort = (array) => {
     if (array.length < 2) {
-        return array
+        document.getElementById("answerbox").innerHTML= array
     }
     const chosenIndex = array.length - 1
     const chosen = array[chosenIndex]
@@ -61,8 +60,8 @@ quickSort = (array) => {
     }
 
     const output = [...quickSort(a), chosen, ...quickSort(b)]
-    console.log(output.join(' '))
-    return output
+    document.getElementById("answerbox").innerHTML= output.join(' ')
+    document.getElementById("answerbox").innerHTML = output
 }
 
 
@@ -70,12 +69,12 @@ quickSort = (array) => {
 //Merge Sort Algorithm Implementation
 divide = (array) => {
     if (array.length < 2) {
-        return array
+        document.getElementById("answerbox").innerHTML = array
     }
         const mid = Math.floor(array.length / 2)
         const smallOne = array.slice(0, mid)
         const smallTwo = array.slice(mid)
-        return sort(divide(smallOne), divide(smallTwo))
+        document.getElementById("answerbox").innerHTML = sort(divide(smallOne), divide(smallTwo))
     }
 
 sort = (smallOne, smallTwo) => {
@@ -88,13 +87,13 @@ sort = (smallOne, smallTwo) => {
             }
         }
     const output = [...sorted, ...smallOne, ...smallTwo]
-    console.log(output)
-    return output
+    document.getElementById("answerbox").innerHTML= output
+    document.getElementById("answerbox").innerHTML = output
     }
 
 let emptyArray = []
 mergeSort = (array) => {
-return sort(divide(array), emptyArray)
+document.getElementById("answerbox").innerHTML= sort(divide(array), emptyArray)
 }
 
   
