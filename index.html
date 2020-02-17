@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <title>Assignment 2</title>
     <link rel="stylesheet" type="text/css" href="main.css">
+    
 
 </head>
 
@@ -23,15 +24,19 @@
     </ul>
     <div class = "codeform">
     <form>
+       
         <label for="fname">Input your unsorted array elements here:</label><br><br>
         <input type="text" id="uarray" name="uarray"><br><br>
-        <input type="submit" value="Bubble Sort">
-        <input type="submit" value="Insertion Sort">
+        <input type="submit" value="Bubble Sort" onClick="bubbleSort()">
+        <input type="submit" value="Insertion Sort" onClick="insertionSort()">
         <input type="submit" value="Merge Sort">
-        <input type="submit" value="Quick Sort">
+        <input type="submit" value="Quick Sort"onClick="quickSort()">
     </form>
+
+    <script src="SortLib.js"></script>
     </div>
 
+    
 </body>
 
 </html>
