@@ -9,8 +9,11 @@ body
 }
 
 #answerbox {
-   width: 45%
+   width: 50rem;
+   height: 15rem;
+   
 }
 #uarray{
-   width: 45%
+   width: 50rem;
+   height: 10rem;
 }

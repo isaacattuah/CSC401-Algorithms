@@ -26,19 +26,21 @@
     <form>
         <label for="fname">Input your unsorted array elements, separated by spaces, in the field below</label><br><br>
         
-        <textarea name="answerbox" id="uarray"> </textarea><br/><br/>
+        <textarea name="answerbox" id="uarray"></textarea><br/><br/>
         <input type="button" value="Bubble Sort" onClick="bubbleSort(addTo())">
         <input type="button" value="Insertion Sort" onClick="insertionSort(addTo())">
         <input type="button" value="Merge Sort" onClick="mergeSort(addTo())">
-        <input type="button" value="Quick Sort"onClick="quickSort(addTo())"><br /><br />
-        <label for="fname">Your array has been sorted</label><br><br>
-        <textarea id="answerbox"> </textarea>
+        <input type="button" value="Quick Sort"onClick="quickSort(addTo())"><br><br>
+        <label for="fname"><span id="sort"></span> </label><br><br>
+        
+        <textarea id="answerbox"></textarea>
+        
     </form>
     
     
 
 
-    <script src="SortLibGui.js">
+    <script src="SortLib.js">
         
     </script>
 

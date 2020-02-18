@@ -1,4 +1,21 @@
-///The following functions input the sorted array into the console
+(function () {
+    var old = console.log;
+    var logger = document.getElementById('answerbox');
+    console.log = function () {
+        for (var i = 0; i < arguments.length; i++) {
+            if (typeof arguments[i] == 'object') {
+                logger.innerHTML += "-----------------------------------------------------------------------------" + '\n';
+                logger.innerHTML += (JSON && JSON.stringify ? JSON.stringify(arguments[i], 2) : arguments[i]) + '\n';
+            } else {
+                logger.innerHTML += arguments[i] + '\n';
+            }
+        }
+    }
+})();
+//The following functions input the sorted array into the console
+
+
+    
 
 
 //This function adds inputted numbers to arrays
@@ -12,6 +29,7 @@ function addTo() {
 
 //Insertion Sort Algorithm Implementation
 insertionSort = (array) => {
+  
     for (outer = 1; outer < array.length; outer++) {
         for (inner = 0; inner < outer; inner++) {
             console.log(array.join(' '))
@@ -22,11 +40,13 @@ insertionSort = (array) => {
         }
     }
     console.log(array.join(' '))
+    document.getElementById("sort").innerHTML = "You array has been sorted using Insertion Sort"
     return array
 }
 
 //Bubble Sort Algorithm Implementation
 bubbleSort = (array) => {
+    
     let swapped = false
     do {
         swapped = false
@@ -43,11 +63,13 @@ bubbleSort = (array) => {
         })
     } while (swapped)
     console.log(array.join(' '))
+    document.getElementById("sort").innerHTML = "You array has been sorted using Bubble Sort"
     return array
 }
 
 //Bubble Sort Algorithm Implementation
 quickSort = (array) => {
+    
     if (array.length < 2) {
         return array
     }
@@ -62,6 +84,7 @@ quickSort = (array) => {
 
     const output = [...quickSort(a), chosen, ...quickSort(b)]
     console.log(output.join(' '))
+    document.getElementById("sort").innerHTML = "You array has been sorted using Quick Sort"
     return output
 }
 
@@ -87,15 +110,20 @@ sort = (smallOne, smallTwo) => {
             sorted.push(smallTwo.shift())
             }
         }
+    
     const output = [...sorted, ...smallOne, ...smallTwo]
     console.log(output)
+    
     return output
     }
 
 let emptyArray = []
 mergeSort = (array) => {
+document.getElementById("sort").innerHTML = "You array has been sorted using Merge Sort"
 return sort(divide(array), emptyArray)
 }
+
+
 
   
     
