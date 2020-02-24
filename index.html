@@ -22,25 +22,42 @@
         <li>Quick Sort</li>
         <li>Merge Sort</li>
     </ul>
-    <div class = "codeform">
+    
+    <div class ="mainframe">
+    <table class="codeform">
+    <tr>
     <form>
-        <label for="fname">Input your unsorted array elements, separated by spaces, in the field below</label><br><br>
+        <td>
+        <label for ="arraysize">Input your array size (Between 00 and 500):</label>
+        <input type="number" id="arraySize" name="arraysize">
+        <input type="button" value="Submit" onClick="randomNumbers()"><br/><br/>
         
+        <div id="buttons">
+        <label for="fname">Your unsorted array elements are separated by spaces in the field below</label><br/><br/>
         <textarea name="answerbox" id="uarray"></textarea><br/><br/>
         <input type="button" value="Bubble Sort" onClick="bubbleSort(addTo())">
         <input type="button" value="Insertion Sort" onClick="insertionSort(addTo())">
         <input type="button" value="Merge Sort" onClick="mergeSort(addTo())">
-        <input type="button" value="Quick Sort"onClick="quickSort(addTo())"><br><br>
+        <input type="button" value="Quick Sort"onClick="quickSort(addTo())"><br/><br/>
+        <input type="button" value="Clear" onClick="clearBox()"><br /><br />
+        </td>
+        
+        <td id ="arrow">==========></td>
+        <td>
+        <div id = buttons>
         <label for="fname"><span id="sort"></span> </label><br><br>
-        
-        <textarea id="answerbox"></textarea>
-        
+        <textarea id="answerbox"></textarea><br><br>
+        <input type="button" value="Clear" onClick="clearOutput()" id="answerboxClear">
+        </td>
     </form>
+    </tr>
+    </table>
+    </div>
     
     
 
 
-    <script src="SortLib.js">
+    <script src="SortLibGui.js">
         
     </script>
 

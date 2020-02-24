@@ -4,16 +4,41 @@ body
     
 }
 
-.codeform{
+.mainframe{
     text-align: center;
 }
 
+.codeform{
+    text-align: justify;
+}
+
 #answerbox {
-   width: 50rem;
-   height: 15rem;
-   
+   width: 40rem;
+   height: 8rem;
+   margin-left: 1.5rem; 
+   margin-bottom: -1.0rem;
 }
+
+#answerboxClear {
+    margin-left: 10rem;
+    margin-bottom: -1.0rem;
+    text-align: justify;
+}
+
 #uarray{
-   width: 50rem;
-   height: 10rem;
+   width: 30rem;
 }
+
+#buttons{
+    text-align: center;
+}
+
+#arraySize{
+    width: 4rem;
+}
+
+#arrow{
+    text-align: center;
+    padding-bottom: 2rem;
+}
+
