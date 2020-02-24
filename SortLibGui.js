@@ -1,4 +1,17 @@
-
+(function () {
+    var old = console.log;
+    var logger = document.getElementById('answerbox');
+    console.log = function () {
+        for (var i = 0; i < arguments.length; i++) {
+            if (typeof arguments[i] == 'object') {
+                logger.innerHTML += "-----------------------------------------------------------------------------" + '\n';
+                logger.innerHTML += (JSON && JSON.stringify ? JSON.stringify(arguments[i], 2) : arguments[i]) + '\n';
+            } else {
+                logger.innerHTML += arguments[i] + '\n';
+            }
+        }
+    }
+})();
 
 //The following functions input the sorted array into the console
 
@@ -25,56 +38,126 @@ function addTo() {
 //Insertion Sort Algorithm Implementation
 insertionSort = (array) => {
     let counter = 0;
-
-    for (outer = 1; outer < array.length; outer++) {
-        for (inner = 0; inner < outer; inner++) {
-            counter++;
-            console.log(array.join(' '))
-            if (array[outer] < array[inner]) {
-                const [element] = array.splice(outer, 1)
-                array.splice(inner, 0, element)
+    if (array.length > 15) {
+        for (outer = 1; outer < array.length; outer++) {
+            for (inner = 0; inner < outer; inner++) {
+                counter++;
+                // console.log(array.join(' '))
+                if (array[outer] < array[inner]) {
+                    const [element] = array.splice(outer, 1)
+                    array.splice(inner, 0, element)
+                }
             }
         }
+        counter++;
+        // console.log(array.join(' '))
+        document.getElementById("sort").innerHTML = "The number of steps have been indicated for this Insertion Sort"
+        console.log("You have " + counter + " steps for this insertion sort");
+        // return array
+    } else {
+        for (outer = 1; outer < array.length; outer++) {
+            for (inner = 0; inner < outer; inner++) {
+                counter++;
+                console.log(array.join(' '))
+                if (array[outer] < array[inner]) {
+                    const [element] = array.splice(outer, 1)
+                    array.splice(inner, 0, element)
+                }
+            }
+        }
+        counter++;
+        console.log(array.join(' '))
+        document.getElementById("sort").innerHTML = "You array has been sorted using Insertion Sort"
+        console.log("You have " + counter + " steps for this insertion sort");
+        return array
     }
-    counter++;
-    console.log(array.join(' '))
-    document.getElementById("sort").innerHTML = "You array has been sorted using Insertion Sort"
-    console.log("You have " + counter + " steps for this insertion sort");
-    return array
 }
 
 //Bubble Sort Algorithm Implementation
 bubbleSort = (array) => {
     let counter = 0;
+    if (array.length > 15) {
+        let swapped = false
+        do {
+            swapped = false
+            array.forEach((current, i) => {
+                counter++;
+                // console.log(array.join(' '))
+                if (current > array[i + 1]) {
+                    const temp = current
+                    counter++;
+                    // console.log(array.join(' '))
 
-    let swapped = false
-    do {
-        swapped = false
-        array.forEach((current, i) => {
-            counter++;
-            console.log(array.join(' '))
-            if (current > array[i + 1]) {
-                const temp = current
+                    array[i] = array[i + 1]
+                    array[i + 1] = temp
+                    swapped = true
+                }
+            })
+        } while (swapped)
+        counter++;
+        // console.log(array.join(' '))
+        document.getElementById("sort").innerHTML = "The number of steps have been indicated for this Bubble Sort"
+        console.log("You have " + counter + " steps for this bubble sort");
+        // return array
+    } else {
+        let swapped = false
+        do {
+            swapped = false
+            array.forEach((current, i) => {
                 counter++;
                 console.log(array.join(' '))
+                if (current > array[i + 1]) {
+                    const temp = current
+                    counter++;
+                    console.log(array.join(' '))
 
-                array[i] = array[i + 1]
-                array[i + 1] = temp
-                swapped = true
-            }
-        })
-    } while (swapped)
-    counter++;
-    console.log(array.join(' '))
-    document.getElementById("sort").innerHTML = "You array has been sorted using Bubble Sort"
-    console.log("You have " + counter + " steps for this bubble sort");
-    return array
+                    array[i] = array[i + 1]
+                    array[i + 1] = temp
+                    swapped = true
+                }
+            })
+        } while (swapped)
+        counter++;
+        console.log(array.join(' '))
+        document.getElementById("sort").innerHTML = "Your array has been sorted using Bubble Sort"
+        console.log("You have " + counter + " steps for this bubble sort");
+        return array
+    }
 }
 
+
 //Quick Sort Algorithm Implementation
+let counter = 0;
 quickSort = (array) => {
-    let counter = 0;
-if (array.length < 2) {
+    
+    if (array.length > 15) {
+        if (array.length < 2) {
+            return array
+        }
+        let chosenIndex = array.length - 1
+        let chosen = array[chosenIndex]
+        let a = []
+        let b = []
+        for (let i = 0; i < chosenIndex; i++) {
+            const temp = array[i]
+            temp < chosen ? a.push(temp) : b.push(temp)
+            counter++;
+        }
+
+        let output = [...quickSort(a), chosen, ...quickSort(b)]
+        // console.log(output.join(' '))
+        document.getElementById("sort").innerHTML = "The total number of steps have been indicated for this Quick Sort"
+        if (array.length == 2) {
+            console.log("You have 1 steps for this quick sort");
+            counter = 0
+        } 
+        // return output
+
+    }
+    else{
+
+    
+    if (array.length < 2) {
         return array
     }
     let chosenIndex = array.length - 1
@@ -88,18 +171,15 @@ if (array.length < 2) {
     }
 
     let output = [...quickSort(a), chosen, ...quickSort(b)]
-    counter++
-    counter++
     console.log(output.join(' '))
     document.getElementById("sort").innerHTML = "You array has been sorted using Quick Sort"
-    counter++
-    if (array.length == 2) {
-        console.log("You have 1 steps for this quick sort");
-    } else {
-        console.log("You have " + counter + " steps for this Quick Sort")
-    }
-    return output
 
+    
+        console.log("You have " + counter + " steps for this Quick Sort")
+        
+
+    return output
+    }
 }
 
 
@@ -108,6 +188,8 @@ if (array.length < 2) {
 let MergeCounter = 0;
 
 divide = (array) => {
+
+    
     if (array.length < 2) {
         return array
     }
@@ -119,6 +201,7 @@ divide = (array) => {
 }
 
 sort = (smallOne, smallTwo) => {
+      
     const sorted = []
     while (smallOne.length && smallTwo.length) {
         if (smallOne[0] <= smallTwo[0]) {
@@ -138,19 +221,27 @@ sort = (smallOne, smallTwo) => {
 
 let emptyArray = []
 mergeSort = (array) => {
-
+    if (array.length > 15){
+        document.getElementById("sort").innerHTML = "The total number of steps have been indicated at end of this Merge Sort"
+        return sort(divide(array), emptyArray)
+        
+    }
+    else {
     document.getElementById("sort").innerHTML = "You array has been sorted using Merge Sort"
-    MergeCounter = 0
     return sort(divide(array), emptyArray)
+    }
 }
 
 function clearBox() {
     document.getElementById("uarray").innerHTML = ""
     document.getElementById("sort").innerHTML = ""
-   
+    counter = 0;
+    MergeCounter = 0
 }
 
 function clearOutput() {
     document.getElementById("answerbox").innerHTML = ""
     document.getElementById("sort").innerHTML = ""
+    counter = 0;
+    MergeCounter = 0;
 }
