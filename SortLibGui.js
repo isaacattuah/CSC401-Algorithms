@@ -129,7 +129,7 @@ bubbleSort = (array) => {
 //Quick Sort Algorithm Implementation
 let counter = 0;
 quickSort = (array) => {
-    
+
     if (array.length > 15) {
         if (array.length < 2) {
             return array
