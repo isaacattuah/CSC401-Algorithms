@@ -1,116 +1,23 @@
-<!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset="utf-8" />
-    <title>Assignment 2</title>
-    <link rel="stylesheet" type="text/css" href="main.css">
-
-
-</head>
-
-<body>
-
-    <h1 align='center'>Assignment 2</h1>
-    <h2 align='center'>Implementation of Sorting Algorithms</h2>
-    <h3 align='center'>By <a href="https://isaacattuah.com/">Isaac K. Attuah</a></h3>
-
-    <p class>This program sorts numbers using the following algorithms:</p>
-    <ul class>
-        <li>Bubble Sort</li>
-        <li>Insertion Sort</li>
-        <li>Quick Sort</li>
-        <li>Merge Sort</li>
-    </ul>
-    <p><b>Only the sorted array (comparisons) will be shown for input sizes above 16 elements. Total number of steps are
-            always indicated at the end of the output.</b></p>
-    <p><b>Press Clear after each iteration of Quick and Merge Sort to reset their respective counters.</b></p>
-    <br />
-    <br />
-
-    <div class="mainframe">
-        <table class="codeform">
-            <tr>
-                <form>
-                    <td>
-                        <label for="arraysize">Input your array size (Between 00 and 500):</label>
-                        <input type="number" id="arraySize" name="arraysize">
-                        <input type="button" value="Submit" onClick="randomNumbers()"><br /><br />
-
-                        <div id="buttons">
-                            <label for="fname">Your unsorted array elements are separated by spaces in the field
-                                below</label><br /><br />
-                            <textarea name="answerbox" id="uarray"></textarea><br /><br />
-                            <input type="button" value="Bubble Sort" onClick="bubbleSort(addTo())">
-                            <input type="button" value="Insertion Sort" onClick="insertionSort(addTo())">
-                            <input type="button" value="Merge Sort" onClick="mergeSort(addTo())">
-                            <input type="button" value="Quick Sort" onClick="quickSort(addTo())"><br /><br />
-                            <input type="button" value="Clear" onClick="clearBox()"><br /><br />
-                    </td>
-
-                    <td id="arrow">==========></td>
-                    <td>
-                        <div id=buttons>
-                            <label for="fname"><span id="sort"></span> </label><br><br>
-                            <textarea id="answerbox"></textarea><br><br>
-                            <input type="button" value="Clear" onClick="clearOutput()" id="answerboxClear">
-                    </td>
-                </form>
-            </tr>
-        </table>
-    </div>
-    <br>
-    <br>
-    <br>
-
-    <div class="mainframe">
-        <h3>Comparison Of Algorithms With Different Input Sizes</h3>
-        <br />
-        <img src="AlgoChart.JPG" />
-        <br />
-        <br />
-        <br />
-        <img src="AlgoGraph.JPG" />
-        <br />
-        <br />
-        <br />
-
-    </div>
-    <p id="essay">The aim of this lab was to test the number of comparisons made by different algorithms based on the
-        number
-        of
-        input values that were passed to each algorithm. The input values were 50, 100, 150, 200, 250, 300, 350, 400,
-        450, 500. By observation, Bubble Sort, Insertion Sort and Quick Sort had a noticeable delay in displaying
-        output however Merge Sort remained the most consistent throughout the testing process. Insertion, Merge Sort
-        and Bubble Sort were the stable sorting techniques whereas Quick Sort was not. Merge Sort was the only
-        algorithm that split the problems into multiple arrays hence it had a better advantage over the other
-        algorithms in terms of working with the console.log output of JavaScript.</p>
-    <p>The graph above confirms that the average time complexities of each of the algorithms.
-        Bubble Sort and Insertion Sort where both O(n^2) and Merge Sort and Quick Sort were both O(nlogn). The
-        behavior of the graph showed that Quick Sort was the fastest for all the input values provided.</p>
-    <p>The individual sorting algorithms work in their own unique ways. The list below shows how each sorting
-        technique works including some key differences in their operations</p>
-    <ol>
-        <li><b>Bubble Sort</b>: Bubbles largest elements to the end of list</li>
-        <li><b>Insertion Sort</b>: Inserts elements in their rightful position creating sorted array portion till entire
-            array is sorted</li>
-        <li><b>Merge Sort</b>: Uses Divide and Conquer technique to sort arrays in smaller arrays and returns a sorted
-            array as output</li>
-        <li><b>Quick Sort</b>: A random element is made a pivot and elements on the left- and right-hand side are
-            compared
-            to this pivot. Elements smaller than the pivot go to the left-hand side and elements larger than pivot
-            go to the right-hand side. </li>
-    </ol>
-
-
-    <script src="SortLibGui.js">
-
-    </script>
-
-
-    </div>
-
-
-</body>
-
+    <head></head>
+    <title>CSC 401 Homepage</title>
+    <body>
+        <h1 align ="center">
+            CSC 401 Homepage
+        </h1>
+        <h2 align = "center">
+            by 
+        </h2>
+        <h2 align ="center"><a href="https://isaacattuah.com/">Isaac K. Attuah</a></h2>
+        <br>
+        <p style="font-size:18px">This webpage contains all the CSC 401 algorithms implemented during the Spring 2020
+            semester.</p>
+        <br>
+        <ol>
+            <li><a href="index.html"><h2>Assignment 1</h2></a></li>
+            <li><a href="Assignment2/index.html"><h2>Assignment 2</h2></a></li>
+            <li><a href="Assignment3/index.html"><h2>Assignment 3</h2></a></li>
+            <li><a href="Assignment4/index.html"><h2>Assignment 4</h2></a></li>
+        </ol>
+    </body>
 </html>
