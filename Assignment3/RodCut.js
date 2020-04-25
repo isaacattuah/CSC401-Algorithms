@@ -30,13 +30,14 @@ function addTo() {
     console.log(myarr) //to confirm it has been added to the array
     return myarr
 }
-
+let steps = 0;
 function dyn(prices, length) {
     const max = [0]; //len 0 as price 0                                                                                                                
     for (let i = 1; i <= length; i++) {
         const ps = prices.slice(0, i);
         const all = ps.map((p, l) => p + max[i - l - 1]);
         max[i] = Math.max(...all);
+        steps++;
     }
     return max[length];
 }
@@ -81,6 +82,7 @@ newArray = rods.map(l => dyn(prices, l));
 console.log(newArray);
 console.log("Minimum Cost: " + newArray[0]);
 console.log("Maximum Cost: " + newArray[newArray.length -1]);
+console.log("Steps taken: " + steps);
 newArray.length = 0;
 rods.length = 0;
 prices.length = 0;
