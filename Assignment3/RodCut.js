@@ -82,6 +82,8 @@ console.log(newArray);
 console.log("Minimum Cost: " + newArray[0]);
 console.log("Maximum Cost: " + newArray[newArray.length -1]);
 newArray.length = 0;
+rods.length = 0;
+prices.length = 0;
     }
 }
 
