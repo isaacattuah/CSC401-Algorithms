@@ -15,7 +15,35 @@
     <h2 align='center'>Rod Cutting Implementation</h2>
     <h3 align='center'>By <a href="https://isaacattuah.com/">Isaac K. Attuah</a></h3>
 
-    <p class>This program sorts numbers using the following algorithms:</p>
+    <div class="mainframe">
+        <table class="codeform">
+            <tr>
+                <form>
+                    <td>
+                        <label for="arraysize">Input your number (Between 05 and 25):</label>
+                        <input type="number" id="arraySize" name="arraysize">
+                        <input type="button" value="Submit" onClick="randomNumbers()"><br /><br />
+
+                        <div id="buttons">
+                            <label for="fname">Your cost elements are in the spaces below</label><br /><br />
+                            <textarea name="answerbox" id="uarray"></textarea><br /><br />
+                            <input type="button" value="RodCut" onClick="rodCut(addTo())">
+                            <input type="button" value="Clear" onClick="clearBox()"><br /><br />
+                    </td>
+                    <br>
+                    <td id="arrow">============></td>
+                    <td>
+                        <div id=buttons>
+                            <label for="fname"><span id="sort"></span> </label><br><br>
+                            <textarea id="answerbox"></textarea><br><br>
+                            <input type="button" value="Clear" onClick="clearOutput()" id="answerboxClear">
+                    </td>
+                </form>
+            </tr>
+        </table>
+    </div>
+   
+    <p class>This program uses the Rod Cutting Algorithm to provide various prices and the Maximum Price</p>
 <script src="RodCut.js">
 </script>
 </body>
