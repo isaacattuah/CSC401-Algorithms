@@ -18,6 +18,7 @@ function randomNumbers() {
     let RandomArray = Array.from({
         length: number
     }, () => Math.floor(Math.random() * 101));
+    RandomArray = RandomArray.sort(function (a, b) { return a - b });
     document.getElementById("uarray").innerHTML = RandomArray.join(' ').toString();
 }
 
@@ -37,6 +38,7 @@ function dyn(prices, length) {
         const ps = prices.slice(0, i);
         const all = ps.map((p, l) => p + max[i - l - 1]);
         max[i] = Math.max(...all);
+        console.log(max[i]);
         steps++;
     }
     return max[length];
