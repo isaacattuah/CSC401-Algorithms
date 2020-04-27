@@ -42,8 +42,43 @@
             </tr>
         </table>
     </div>
+   <div class ="mainframe">
+    <p>This program uses the Rod Cutting Algorithm to provide various prices per rod cut and the Maximum Price after all price computations.</p>
+    <br>
+    <h3>Sample Report on Rod Cutting Problem</h3>
+     </div>
+        <ol>
+            <li>For input sizes less than 5 or greater than 25, the program issues a warning and does not run.</li>
+                <code>-----------------------------------------------------------------------------<br>
+                    [8,16,26,87] //Array of 4 elements<br>
+                    Input must be between 5 and 25 <br>
+                    -----------------------------------------------------------------------------<br>
+                </code>
+                <code>
+                    -----------------------------------------------------------------------------<br>
+                    [2,11,11,15,16,18,20,24,33,42,47,51,52,52,54,56,58,61,64,67,68,78,84,85,88,93]<br>
+                    Input must be between 5 and 25<br>
+                    -----------------------------------------------------------------------------<br>
+                </code>
+                <br>
+            <li>For input sizes within the range, prices are computed in various stages and the maximum price is taken. This is done repeatedly until the final maximum price is produced </li>
+                    <code>
+                    -----------------------------------------------------------------------------<br>
+                    [45,48,65,86,98]<br>
+                    -----------------------------------------------------------------------------<br>
+                    </code>
+                    <code>
+                    
+                        [45,90,135,180,225,270,315,360,405,450,495,540,585,630,675,720,765,810,855,900]<br>
+                        Minimum Cost: 45 <br>
+                        Maximum Cost: 900 <br>
+                        Steps taken: 210 <br>
+                    -----------------------------------------------------------------------------<br>
+                    Detailed Output Link: <a href ="output.txt">Output.txt</a>
+                    </code>
+            
+        </ol> 
    
-    <p class>This program uses the Rod Cutting Algorithm to provide various prices and the Maximum Price</p>
 <script src="RodCut.js">
 </script>
 </body>
