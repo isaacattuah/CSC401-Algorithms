@@ -37,11 +37,25 @@ function dyn(prices, length) {
     for (let i = 1; i <= length; i++) {
         const ps = prices.slice(0, i);
         const all = ps.map((p, l) => p + max[i - l - 1]);
+        console.log(all);
         max[i] = Math.max(...all);
         console.log(max[i]);
         steps++;
     }
     return max[length];
+}
+let stepsMin = 0;
+function dynMin(prices, length) {
+    const min = [0]; //len 0 as price 0                                                                                                                
+    for (let i = 1; i <= length; i++) {
+        const ps = prices.slice(0, i);
+        const all = ps.map((p, l) => p + min[i - l - 1]);
+        console.log(all);
+        min[i] = Math.min(...all);
+        console.log(min[i]);
+        stepsMin++;
+    }
+    return min[length];
 }
 
 // recursive version: O(2^n)                                                                                                                            
@@ -80,9 +94,17 @@ rodCut = (array) => {
 // console.log(rods.map(l => dyn(prices, l))); // fast                                                                                                     
 //console.log(rods.map(l => mem(prices, l))); // fast                                                                                                    
 // console.log(rods.map(l => rec(prices, l))); // slow 
+console.log("");
+console.log("Maximum Cost Computation");
 newArray = rods.map(l => dyn(prices, l));
-console.log(newArray);
-console.log("Minimum Cost: " + newArray[0]);
+console.log("");
+console.log("Minimum Cost Computation");
+newMinArray = rods.map(l => dynMin(prices, l));
+console.log("");
+console.log("Minimum Cost Values: " + newMinArray);
+console.log("Minimum Cost: " + newMinArray[newMinArray.length - 1]);
+console.log("Steps taken: " + stepsMin);
+console.log("Maximum Cost Values: " + newArray);
 console.log("Maximum Cost: " + newArray[newArray.length -1]);
 console.log("Steps taken: " + steps);
 newArray.length = 0;
