@@ -4,7 +4,7 @@ Implementations of Algorithms made in my CSC 401 Practicum class
 ## Assignment Topics
 1. Assignment 1 - Home Page
 2. Assignment 2 - Sorting Algorithms
-3. Assignmnet 3 - Rod Cutting Problem
+3. Assignment 3 - Rod Cutting Problem
 
 ## Resources Used
 * Sorting algorithms repository: https://github.com/rajatk16/javascript-sort
