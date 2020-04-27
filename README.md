@@ -1,6 +1,11 @@
 # CSC401-Algorithms
 Implementations of Algorithms made in my CSC 401 Practicum class
 
+#Assigment
+1. Assignment 1 - Homepage
+2. Assignment 2 - Sorting Algorithms
+3. Assignmnet 3 - Rod Cutting Problem
+
 # Resources Used
 * Sorting algorithms repository: https://github.com/rajatk16/javascript-sort
 * Converting Strings to Array: https://www.tutorialrepublic.com/faq/how-to-convert-comma-separated-string-into-an-array-in-javascript.php
