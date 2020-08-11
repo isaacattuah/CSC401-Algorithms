@@ -1,5 +1,5 @@
 # CSC401-Algorithms
-Implementations of Algorithms made in my CSC 401 Practicum class
+Implementations of Algorithms made in my CSC 401 Practicum class - https://isaacattuah.github.io/CSC401-Algorithms/
 
 ## Assignment Topics
 1. Assignment 1 - Home Page
